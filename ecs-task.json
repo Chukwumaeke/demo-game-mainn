@@ -1,0 +1,21 @@
+{
+  "family": "demo-game",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "executionRoleArn": "arn:aws:iam::954976287719:role/ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "name": "demo-game",
+      "image": "replace-me-later",
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 80,
+          "protocol": "tcp"
+        }
+      ]
+    }
+  ]
+}

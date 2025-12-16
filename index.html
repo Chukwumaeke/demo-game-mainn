@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Colorful Webpage</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #ff7eb3, #ff758c, #ffb199);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 40px 50px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      max-width: 500px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin: 0 0 15px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+    /* Game styles */
+    .game-controls {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      justify-content: center;
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
+
+    #startBtn {
+      background: rgba(255,255,255,0.12);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 8px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    #startBtn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .game-area {
+      margin-top: 18px;
+      width: 420px;
+      height: 320px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: inset 0 2px 8px rgba(0,0,0,0.25);
+    }
+
+    .dot {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #ff3b30;
+      position: absolute;
+      cursor: pointer;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+      transition: transform 0.08s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>🚀 Hello, Guys!</h1>
+    <p>This webpage served from a built image by Acada Engineers</p>
+
+    <hr style="margin:20px 0; border-color: rgba(255,255,255,0.25)">
+
+    <div id="game">
+      <div class="game-controls">
+        <button id="startBtn">Start Game</button>
+        <div class="stats">
+          <span>Score: <strong id="score">0</strong></span>
+          &nbsp;|&nbsp;
+          <span>Time: <strong id="time">30</strong>s</span>
+          &nbsp;|&nbsp;
+          <span>Best: <strong id="best">0</strong></span>
+        </div>
+      </div>
+
+      <div id="gameArea" class="game-area" aria-label="game area"></div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+
+</body>
+</html>
