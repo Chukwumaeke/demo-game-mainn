@@ -36,9 +36,9 @@ jobs:
       - name: SCP to EC2
         uses: appleboy/scp-action@master
         with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USER }}
-          key: ${{ secrets.EC2_SSH_KEY }}
+          host: ${{ secrets.UBUNTU_HOST }}
+          username: ${{ secrets.UBUNTU_USER }}
+          key: ${{ secrets.UBUNTU_SSH_KEY }}
           source: "haproxy.cfg"
           target: "/tmp"
       
@@ -62,7 +62,7 @@ jobs:
             docker rm haproxy || true
             docker run -d --name haproxy --network $DOCKER_NETWORK -v /tmp/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro -p 443:80 haproxy:latest
 
-          host: ${{ secrets.EC2_HOST }}
-          user: ${{ secrets.EC2_USER }}
-          key: ${{ secrets.EC2_SSH_KEY}}
+          host: ${{ secrets.UBUNTU_HOST }}
+          user: ${{ secrets.UBUNTU_USER }}
+          key: ${{ secrets.UBUNTU_SSH_KEY}}
           args: "-tt"
