@@ -48,7 +48,7 @@ jobs:
           command: |
             docker login --username ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_TOKEN }}
             IMAGE="${{ secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}"
-            DOCKER_NETWORK=acada-game
+            DOCKER_NETWORK=Francis-game
             docker pull $IMAGE:latest
             docker network create $DOCKER_NETWORK || true
             for i in {1..9}; 
