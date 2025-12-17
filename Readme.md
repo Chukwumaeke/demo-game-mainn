@@ -1,4 +1,4 @@
-# Push simple app image to aws ecr
+# Push simple app image to aws ecr and ecs
 
 
 # Requirements 
